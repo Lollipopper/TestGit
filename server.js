@@ -7,4 +7,9 @@ var server = require('http').createServer(app).listen(8080,function(){
     console.log("Server running at port %s",port)
 });
 
+app.get('/',function(req, res) {
+	res.sendFile(__dirname + '/client/index.html');
+});
+
 var io = require('socket.io').listen(server);
+
